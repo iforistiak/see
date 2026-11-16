@@ -2,27 +2,29 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --color-primary-indigo: #1e1b4b;
-  --color-indigo-accent: #312e81;
-  --color-indigo-bright: #4338ca;
-  --color-vibrant-orange: #ff5a1f;
-  --color-orange-hover: #ea580c;
-  --color-crimson: #dc2626;
+  --color-navy: #0f2557;
+  --color-navy-dark: #09173a;
+  --color-sky: #0ea5e9;
+  --color-sky-soft: #e0f2fe;
+  --color-green: #059669;
+  --color-green-soft: #ecfdf5;
+  --color-red: #dc2626;
   --surface-canvas: #ffffff;
-  --surface-tinted: #f5f5ff;
-  --surface-border: #e2e4f3;
+  --surface-tinted: #f0f7ff;
+  --surface-border: #dbeafe;
 }
 
 .dark {
-  --color-primary-indigo: #312e81;
-  --color-indigo-accent: #4338ca;
-  --color-indigo-bright: #6366f1;
-  --color-vibrant-orange: #ff6b35;
-  --color-orange-hover: #ff5a1f;
-  --color-crimson: #ef4444;
-  --surface-canvas: #0b0a1a;
-  --surface-tinted: #14122d;
-  --surface-border: #25224d;
+  --color-navy: #1e3a8a;
+  --color-navy-dark: #081229;
+  --color-sky: #38bdf8;
+  --color-sky-soft: #0c2342;
+  --color-green: #10b981;
+  --color-green-soft: #06281e;
+  --color-red: #ef4444;
+  --surface-canvas: #071024;
+  --surface-tinted: #0d1b38;
+  --surface-border: #1b315e;
 }
 
 @theme {
@@ -44,44 +46,11 @@
 
 /* Subtle Premium Grain Texture Overlay */
 .bg-grain-overlay {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.045'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
 }
 
 .dark .bg-grain-overlay {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E");
-}
-
-/* Tactile 3D Bookshelf Perspective & Smooth Animations */
-.book-stage {
-  perspective: 1200px;
-}
-
-.book-3d {
-  transform-style: preserve-3d;
-  transform: rotateY(-14deg) rotateX(2deg);
-  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 240ms cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
-}
-
-.group:hover .book-3d,
-.book-3d-interactive:hover {
-  transform: rotateY(-4deg) rotateX(0deg) translateY(-10px) scale(1.03);
-}
-
-.book-3d-detail {
-  transform-style: preserve-3d;
-  transform: rotateY(-16deg) rotateX(3deg);
-  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.book-3d-detail:hover {
-  transform: rotateY(-4deg) rotateX(0deg);
-}
-
-.book-3d-flat {
-  transform-style: preserve-3d;
-  transform: rotateY(0deg) rotateX(0deg);
-  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.055'/%3E%3C/svg%3E");
 }
 
 @keyframes subtleFloat {
@@ -126,17 +95,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .book-3d,
-  .book-3d-detail,
-  .book-3d-flat,
   .animate-book-float,
   .animate-author-glow,
   .animate-author-pulse {
     transform: none !important;
-    transition: none !important;
     animation: none !important;
-  }
-  .group:hover .book-3d {
-    transform: none !important;
   }
 }

@@ -2,15 +2,16 @@ export type Language = 'en' | 'bn';
 export type Theme = 'light' | 'dark';
 
 export type BookCategory =
-  | 'grammar'
+  | 'class-6-8'
+  | 'ssc'
+  | 'hsc'
+  | 'spoken-basic'
   | 'admission'
-  | 'academic'
-  | 'translation'
   | 'upcoming';
 
 export type FilterCategory = 'all' | BookCategory;
 export type BookStatus = 'published' | 'upcoming';
-export type CoverTheme = 'blue' | 'red' | 'orange';
+export type CoverTheme = 'navy' | 'sky' | 'green' | 'red';
 
 export interface Book {
   id: string;
@@ -23,6 +24,7 @@ export interface Book {
   category: BookCategory;
   status: BookStatus;
   priceBdt: number;
+  originalPriceBdt: number;
   pages: number;
   editionEn: string;
   editionBn: string;
@@ -30,8 +32,6 @@ export interface Book {
   bindingBn: string;
   coverTheme: CoverTheme;
   coverImage?: string;
-  badgeTextEn?: string;
-  badgeTextBn?: string;
   descriptionEn: string;
   descriptionBn: string;
   highlightsEn: string[];

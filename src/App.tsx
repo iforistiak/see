@@ -8,6 +8,7 @@ import { ControlBar } from './components/ControlBar';
 import { Footer } from './components/Footer';
 import { HeroSection } from './components/HeroSection';
 import { Navbar } from './components/Navbar';
+import { ScrollToTopButton } from './components/ScrollToTopButton';
 import { SpeedPostSection } from './components/SpeedPostSection';
 import { BOOKS } from './data/books';
 import { TRANSLATIONS } from './data/translations';
@@ -149,7 +150,7 @@ export default function App() {
   const t = TRANSLATIONS[language];
 
   return (
-    <div className="relative flex min-h-screen flex-col bg-white text-slate-900 dark:bg-[#0B0A1A] dark:text-slate-100">
+    <div className="relative flex min-h-screen flex-col bg-white text-slate-900 dark:bg-[#071024] dark:text-slate-100">
       {/* Subtle Premium Grain Texture Background Overlay */}
       <div
         aria-hidden="true"
@@ -239,8 +240,9 @@ export default function App() {
         t={t}
         language={language}
         onNavigateHome={handleNavigateHome}
-        onSelectCategory={setSelectedCategory}
       />
+
+      <ScrollToTopButton label={t.scrollToTopLabel} shortLabel={t.scrollToTopShort} />
     </div>
   );
 }
