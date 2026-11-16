@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Menu, Phone, X } from 'lucide-react';
 import { AUTHOR_CONTACT } from '../data/books';
 import { Translations } from '../data/translations';
+import { publicAsset } from '../utils/assets';
 
 interface NavbarProps {
   t: Translations;
@@ -33,7 +34,7 @@ export function Navbar({ t, onNavigateHome }: NavbarProps) {
         >
           {!logoError && (
             <img
-              src="/assets/see-logo-mark.png"
+              src={publicAsset('assets/see-logo-mark.png')}
               alt="Selim English Education emblem"
               referrerPolicy="no-referrer"
               onError={() => setLogoError(true)}

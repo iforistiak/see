@@ -3,6 +3,7 @@ import { Clock, ExternalLink, GraduationCap, MapPin, Phone } from 'lucide-react'
 import { AUTHOR_CONTACT } from '../data/books';
 import { Translations } from '../data/translations';
 import { Language } from '../types/book';
+import { publicAsset } from '../utils/assets';
 
 interface AuthorSectionProps {
   t: Translations;
@@ -63,7 +64,7 @@ export function AuthorSection({ t, language }: AuthorSectionProps) {
             <div className="relative flex justify-center bg-gradient-to-br from-[#0F2557] via-[#0B2A5B] to-[#065F46] px-6 pt-6">
               {!portraitError ? (
                 <img
-                  src="/assets/author-portrait-v2.png"
+                  src={publicAsset('assets/author-portrait-v2.png')}
                   alt="Md. Selim Aktar — Rajshahi University"
                   referrerPolicy="no-referrer"
                   onError={() => setPortraitError(true)}
@@ -80,7 +81,7 @@ export function AuthorSection({ t, language }: AuthorSectionProps) {
               {!logoError && (
                 <div className="overflow-hidden rounded-xl border border-sky-100 bg-white p-2.5 dark:border-[#1B315E]">
                   <img
-                    src="/assets/aistudio/image_92932d13.png"
+                    src={publicAsset('assets/aistudio/image_92932d13.png')}
                     alt="Selim English Education — West of Nogor Bhobon, Rajshahi"
                     referrerPolicy="no-referrer"
                     onError={() => setLogoError(true)}

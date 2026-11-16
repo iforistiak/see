@@ -7,6 +7,7 @@ import { CategoryStrip } from './components/CategoryStrip';
 import { ControlBar } from './components/ControlBar';
 import { Footer } from './components/Footer';
 import { HeroSection } from './components/HeroSection';
+import { LoadingScreen } from './components/LoadingScreen';
 import { Navbar } from './components/Navbar';
 import { ScrollToTopButton } from './components/ScrollToTopButton';
 import { SpeedPostSection } from './components/SpeedPostSection';
@@ -151,6 +152,8 @@ export default function App() {
 
   return (
     <div className="relative flex min-h-screen flex-col bg-white text-slate-900 dark:bg-[#071024] dark:text-slate-100">
+      <LoadingScreen language={language} brandTitle={t.brandTitle} />
+
       {/* Subtle Premium Grain Texture Background Overlay */}
       <div
         aria-hidden="true"
@@ -242,7 +245,7 @@ export default function App() {
         onNavigateHome={handleNavigateHome}
       />
 
-      <ScrollToTopButton label={t.scrollToTopLabel} shortLabel={t.scrollToTopShort} />
+      <ScrollToTopButton label={t.scrollToTopLabel} />
     </div>
   );
 }

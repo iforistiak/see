@@ -18,6 +18,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import { AUTHOR_CONTACT, BOOKS, getDiscountPercent } from '../data/books';
 import { Translations } from '../data/translations';
 import { Language } from '../types/book';
+import { publicAsset } from '../utils/assets';
 import { BookCover3D } from './BookCover3D';
 
 interface HeroSectionProps {
@@ -278,7 +279,7 @@ export function HeroSection({
                   {!portraitError && (
                     <div className="relative h-36 w-36 sm:h-44 sm:w-44">
                       <img
-                        src="/assets/author-portrait-v2.png"
+                        src={publicAsset('assets/author-portrait-v2.png')}
                         alt="Md. Selim Aktar — Author & English Educator"
                         referrerPolicy="no-referrer"
                         onError={() => setPortraitError(true)}

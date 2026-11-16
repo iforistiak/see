@@ -3,6 +3,7 @@ import { Clock, ExternalLink, MapPin, Truck } from 'lucide-react';
 import { AUTHOR_CONTACT } from '../data/books';
 import { Translations } from '../data/translations';
 import { Language } from '../types/book';
+import { publicAsset } from '../utils/assets';
 
 interface FooterProps {
   t: Translations;
@@ -35,7 +36,7 @@ export function Footer({
             >
               {!logoError && (
                 <img
-                  src="/assets/see-logo-mark.png"
+                  src={publicAsset('assets/see-logo-mark.png')}
                   alt="Selim English Education logo"
                   referrerPolicy="no-referrer"
                   onError={() => setLogoError(true)}
