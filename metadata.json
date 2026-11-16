@@ -1,0 +1,6 @@
+{
+  "name": "Selim English Education — Bookstore & 3D Bookshelf",
+  "description": "Official online book catalog and 3D bookshelf for English author and educator Md. Selim Aktar (Selim English Education, Rajshahi). Browse all published and upcoming books, view bKash and Nagad payment details, and order by phone for nationwide Bangladesh Post Office Speed Post delivery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

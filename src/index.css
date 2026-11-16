@@ -1,0 +1,142 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --color-primary-indigo: #1e1b4b;
+  --color-indigo-accent: #312e81;
+  --color-indigo-bright: #4338ca;
+  --color-vibrant-orange: #ff5a1f;
+  --color-orange-hover: #ea580c;
+  --color-crimson: #dc2626;
+  --surface-canvas: #ffffff;
+  --surface-tinted: #f5f5ff;
+  --surface-border: #e2e4f3;
+}
+
+.dark {
+  --color-primary-indigo: #312e81;
+  --color-indigo-accent: #4338ca;
+  --color-indigo-bright: #6366f1;
+  --color-vibrant-orange: #ff6b35;
+  --color-orange-hover: #ff5a1f;
+  --color-crimson: #ef4444;
+  --surface-canvas: #0b0a1a;
+  --surface-tinted: #14122d;
+  --surface-border: #25224d;
+}
+
+@theme {
+  --font-display: "Poppins", "Hind Siliguri", system-ui, -apple-system, sans-serif;
+  --font-sans: "Poppins", "Hind Siliguri", system-ui, -apple-system, sans-serif;
+  --font-mono: "Poppins", "Hind Siliguri", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, .font-display, .font-mono {
+    font-family: var(--font-sans);
+  }
+}
+
+/* Subtle Premium Grain Texture Overlay */
+.bg-grain-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.045'/%3E%3C/svg%3E");
+}
+
+.dark .bg-grain-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E");
+}
+
+/* Tactile 3D Bookshelf Perspective & Smooth Animations */
+.book-stage {
+  perspective: 1200px;
+}
+
+.book-3d {
+  transform-style: preserve-3d;
+  transform: rotateY(-14deg) rotateX(2deg);
+  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 240ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.group:hover .book-3d,
+.book-3d-interactive:hover {
+  transform: rotateY(-4deg) rotateX(0deg) translateY(-10px) scale(1.03);
+}
+
+.book-3d-detail {
+  transform-style: preserve-3d;
+  transform: rotateY(-16deg) rotateX(3deg);
+  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.book-3d-detail:hover {
+  transform: rotateY(-4deg) rotateX(0deg);
+}
+
+.book-3d-flat {
+  transform-style: preserve-3d;
+  transform: rotateY(0deg) rotateX(0deg);
+  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-book-float {
+  animation: subtleFloat 4.5s ease-in-out infinite;
+}
+
+@keyframes authorPulseGlow {
+  0%, 100% {
+    transform: translate(-50%, 0) scale(1);
+    opacity: 0.72;
+  }
+  50% {
+    transform: translate(-50%, 0) scale(1.09);
+    opacity: 1;
+  }
+}
+
+@keyframes authorPortraitBreath {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.022);
+  }
+}
+
+.animate-author-glow {
+  animation: authorPulseGlow 3.6s ease-in-out infinite;
+}
+
+.animate-author-pulse {
+  animation: authorPortraitBreath 4.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book-3d,
+  .book-3d-detail,
+  .book-3d-flat,
+  .animate-book-float,
+  .animate-author-glow,
+  .animate-author-pulse {
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+  .group:hover .book-3d {
+    transform: none !important;
+  }
+}
